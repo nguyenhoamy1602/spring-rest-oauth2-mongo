@@ -3,6 +3,7 @@ package sixkiller.sample.domain;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import org.springframework.data.annotation.Id;
+import org.springframework.data.mongodb.core.index.Indexed;
 
 import javax.validation.constraints.NotNull;
 
@@ -17,6 +18,7 @@ public class User {
     private String password;
 
     @NotNull
+    @Indexed(unique = true)
     private String userName;
 
     @NotNull

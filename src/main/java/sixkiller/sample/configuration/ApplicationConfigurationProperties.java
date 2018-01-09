@@ -7,6 +7,8 @@ import org.springframework.stereotype.Component;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.mongodb.core.MongoTemplate;
+import org.springframework.data.mongodb.core.query.Criteria;
+import org.springframework.data.mongodb.core.query.Query;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 
 import sixkiller.sample.domain.User;
@@ -25,12 +27,18 @@ public class ApplicationConfigurationProperties {
 
     @PostConstruct
     public void init() throws IOException {
-        User admin = new User();
-        String[] roles = {"ADMIN", "USER"};
-        admin.setUserName("nmy3");
-        admin.setPassword(passwordEncoder.encode("password"));
-        admin.setRoles(roles);
+        Query query = new Query();
+        query.addCriteria(Criteria.where("userName").is("admin"));
+        User admin = mongoTemplate.findOne(query, User.class);
+        if (admin == null) {
+            admin = new User();
+            String[] roles = {"ADMIN", "USER"};
+            admin.setUserName("admin");
+            admin.setPassword(passwordEncoder.encode("password"));
+            admin.setRoles(roles);
+        }
         mongoTemplate.save(admin);
+
     }
 
     private String[] defaultUserRoles;
