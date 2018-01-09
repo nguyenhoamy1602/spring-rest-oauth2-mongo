@@ -80,7 +80,7 @@ public class UserRestController {
 
     @PreAuthorize(ADMIN)
     @RequestMapping(path = "/{userName}", method = RequestMethod.PUT)
-    public ResponseEntity<UserResource> createUser(@PathVariable String userName,
+    public ResponseEntity<UserResource> updateUser(@PathVariable String userName,
                                                    @Validated @RequestBody ModifyUserDto userDto) {
 
         User savedUser;
