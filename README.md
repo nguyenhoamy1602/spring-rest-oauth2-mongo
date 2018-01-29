@@ -1,5 +1,6 @@
 # Hypermedia-Driven RESTful Web Service
 Forked from https://github.com/selakavon/spring-rest-oauth2-mongo
+
 Added features:
 * Swagger UI
 * Set up admin user in the app itself
