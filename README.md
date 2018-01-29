@@ -1,11 +1,17 @@
 # Hypermedia-Driven RESTful Web Service
 Forked from https://github.com/selakavon/spring-rest-oauth2-mongo
 
-Added features:
+### Added features
 * Swagger UI
 * Set up admin user in the app itself
 
-[![Build Status](https://api.travis-ci.org/selakavon/spring-rest-oauth2-mongo.svg)](https://travis-ci.org/selakavon/spring-rest-oauth2-mongo)
+### Requirements
+* Java - http://www.oracle.com/technetwork/java/javase/downloads/jdk8-downloads-2133151.html
+* Maven - https://maven.apache.org/download.cgi
+* MongoDB - https://docs.mongodb.com/manual/installation/
+
+
+----
 
 Try it on Heroku: https://joggingtracker.herokuapp.com/api
 
@@ -27,7 +33,7 @@ This is a sample of a Hypermedia-Driven RESTful Web Service service based on Spr
 mvn clean install
 ````
 
-### Dev enviroment configuraiton
+### Dev enviroment configuration
 
 ##### Mongo
 
