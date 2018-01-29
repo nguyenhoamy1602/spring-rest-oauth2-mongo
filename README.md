@@ -1,4 +1,8 @@
 # Hypermedia-Driven RESTful Web Service
+Forked from https://github.com/selakavon/spring-rest-oauth2-mongo
+Added features:
+* Swagger UI
+* Set up admin user in the app itself
 
 [![Build Status](https://api.travis-ci.org/selakavon/spring-rest-oauth2-mongo.svg)](https://travis-ci.org/selakavon/spring-rest-oauth2-mongo)
 
@@ -25,18 +29,6 @@ mvn clean install
 ### Dev enviroment configuraiton
 
 ##### Mongo
-
-##### Admin user init script
-Initialize admin user (regular users can be registered through UI) with admin password.
-````javascript
-db.user.insert(
-	{ "fullName": "Administrator",
-	  "userName": "admin",
-	  "password": "$2a$10$XirirFXO3oFfrPEqOfmzMu7gBAWLapnCtgRHK.QHcrqZVJ1j//Ykq",
-	  "roles": ["ADMIN","USER"]
-	}
-);
-````
 
 ### Running 
 
